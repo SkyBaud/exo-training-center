@@ -1,4 +1,9 @@
-<div id="pdf-viewer"></div>
+<div id="pdfpage">
+    <div id="zoomin">+</div>
+    <div id="zoomout">-</div>
+    <div id="pdf-viewer"></div>
+</div>
+
 
 <script>
     var pdfDoc = null, scale = 1;
@@ -16,6 +21,14 @@
         } else {
             $('#pdf-viewer').hide();
         }
+        $('#zoomin').on('click', function () {
+            scale += 0.5;
+            renderAllPages();
+        });
+        $('#zoomout').on('click', function () {
+            scale -= 0.5;
+            renderAllPages();
+        });
     });
 
     /**
@@ -35,6 +48,7 @@
      * Get each page info from document and render page.
      */
     function renderAllPages() {
+        $('#pdf-viewer').html('');
         for (var i = 1; i <= pdfDoc.numPages; i++) {
             renderPage(i);
         }
@@ -64,4 +78,5 @@
             });
         });
     }
+
 </script>

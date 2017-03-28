@@ -208,13 +208,30 @@ table td.actions span {
 /*              */
 /* PDF-VIEWER   */
 /*              */
-#pdf-viewer {
+#pdfpage{
+    position : relative;
     width:650px;
     height:600px;
     overflow-y:scroll;
 }
+#pdf-viewer {
+    position : absolute;
+
+
+}
 #pdf-viewer canvas {
     border: 1px solid #ddd;
+}
+#zoomin{
+    position : absolute;
+    right: 18px;
+    font-size : 20px;
+}
+#zoomout{
+    position : absolute;
+    right: 20px;
+    top: 20px;
+    font-size : 20px;
 }
 
 /*              */
